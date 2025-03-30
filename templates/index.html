@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Heart Disease Prediction</h1>
+        <form action="/predict" method="post">
+            <label>Age:</label>
+            <input type="number" name="age" min="18" max="100" required>
+
+            <label>Sex:</label>
+            <select name="sex" required>
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+            </select>
+
+            <label>Chest Pain Type:</label>
+            <select name="cp" required>
+                <option value="0">Typical Angina</option>
+                <option value="1">Atypical Angina</option>
+                <option value="2">Non-Anginal Pain</option>
+                <option value="3">Asymptomatic</option>
+            </select>
+
+            <label>Resting BP:</label>
+            <input type="number" name="trestbps" min="80" max="200" required>
+
+            <label>Cholesterol:</label>
+            <input type="number" name="chol" min="100" max="600" required>
+
+            <label>Fasting Blood Sugar:</label>
+            <select name="fbs" required>
+                <option value="0">Less than 120 mg/dl</option>
+                <option value="1">More than 120 mg/dl</option>
+            </select>
+
+            <label>Resting ECG:</label>
+            <select name="restecg" required>
+                <option value="0">Normal</option>
+                <option value="1">ST-T wave abnormality</option>
+                <option value="2">Probable left ventricular hypertrophy</option>
+            </select>
+
+            <label>Max Heart Rate:</label>
+            <input type="number" name="thalach" min="60" max="250" required>
+
+            <label>Exercise Induced Angina:</label>
+            <select name="exang" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <label>ST Depression:</label>
+            <input type="number" name="oldpeak" step="0.1" min="0" max="6.2" required>
+
+            <label>Slope:</label>
+            <select name="slope" required>
+                <option value="0">Upsloping</option>
+                <option value="1">Flat</option>
+                <option value="2">Downsloping</option>
+            </select>
+
+            <label>Major Vessels:</label>
+            <select name="ca" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+
+            <label>Thalassemia:</label>
+            <select name="thal" required>
+                <option value="0">Normal</option>
+                <option value="1">Fixed Defect</option>
+                <option value="2">Reversible Defect</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        .result {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .healthy {
+            color: green;
+        }
+        .disease {
+            color: red;
+        }
+        .image {
+            width: 200px;
+            margin-top: 20px;
+        }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Heart Disease Prediction Result</h1>
+
+    {% if prediction == 1 %}
+        <p class="result disease">⚠️ High Risk: The person **may have heart disease**. Please consult a doctor.</p>
+        <img class="image" src="{{ url_for('static', filename='heart_disease.png') }}" alt="Heart Disease Warning">
+    {% else %}
+        <p class="result healthy">✅ No Risk: The person **is unlikely to have heart disease**.</p>
+        <img class="image" src="{{ url_for('static', filename='healthy_heart.png') }}" alt="Healthy Heart">
+    {% endif %}
+
+    <a class="back-link" href="/">🔙 Go Back</a>
+</div>
+
+</body>
+</html>
+
